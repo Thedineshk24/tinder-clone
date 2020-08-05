@@ -1,0 +1,16 @@
+.header {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #f9f9f9;
+    align-items: center;
+}
+
+.header__logo {
+    height: 40px;
+    /* always use object-fit contain it fixes automatically which size suits better to perticular element */
+    object-fit: contain; 
+}
+
+.header__icon {
+    object-fit: contain;
+}

@@ -1,17 +1,25 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import "./App.css";
+import Header from "./Header";
+import TinderCards from "./TinderCards";
 
 function App() {
   return (
     <div className="App">
       <h2 className="text text-info"> tinder-clone </h2>
-
-      {/* {Header} */}
-      {/* {Tinder cards} */}
-      {/* {buttons below tinder cards} */}
-
-      {/* {chat screen} */}
-      {/* {individual Chat screen} */}
+      <Header />
+      {/* {------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------} */}
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <TinderCards />
+          </Route>
+          <Route path="/profile">
+            <h1>profile</h1>
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
