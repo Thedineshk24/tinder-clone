@@ -7,6 +7,11 @@
   border-bottom: 1px solid lightgoldenrodyellow;
 }
 
+a {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
 .chat_details {
   flex: 1;
 }
