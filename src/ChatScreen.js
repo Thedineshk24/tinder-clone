@@ -4,6 +4,7 @@ import Avatar from "@material-ui/core/Avatar";
 import "./chatScreen.css";
 // NOTE : ADDED 'ID' TO REMOVE KEY WARNING
 const ChatScreen = () => {
+  const [input, setInput] = useState("");
   const [message, setMessage] = useState([
     {
       name: "Anushka",
@@ -24,6 +25,13 @@ const ChatScreen = () => {
       id: 3,
     },
   ]);
+
+  const handleSend = (e) => {
+    e.preventDefault();
+
+    setMessage([...message, { message: input }]);
+    setInput(""); // cleaning  state
+  };
   return (
     <div className="chatScreen">
       <p className="chatScreen_timestamp">
@@ -45,6 +53,21 @@ const ChatScreen = () => {
           </div>
         )
       )}
+      <form className="chatScreen_input">
+        <input
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          className="chatScreen_inputField"
+          type="text"
+          placeholder="Send a Message . . ."
+        />
+        <button
+          type="submit"
+          className="chatScreen_inputButton"
+          onClick={handleSend}>
+          SEND
+        </button>
+      </form>
     </div>
   );
 };
